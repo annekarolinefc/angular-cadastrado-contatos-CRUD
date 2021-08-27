@@ -1,5 +1,10 @@
 # AngularCadastradoContatosCRUD
 
+  1- Criação das Rotas de Navegação
+  2- Importação do backend e do HttpCliente
+  3- Importação da biblioteca Angular Material
+  4- Importação do módulo de formulários
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
 ## Development server
