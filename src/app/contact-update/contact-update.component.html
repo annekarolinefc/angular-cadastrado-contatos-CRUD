@@ -17,6 +17,6 @@
 
     <div class="actions">
         <a routerLink="/contacts" mat-raised-button>Voltar para lista</a>
-        <button mat-raised-button color="primary" [disabled]="contactForm.invalid || contactForm.dirty">Salvar</button>
+        <button mat-raised-button color="primary" [disabled]="contactForm.invalid || !contactForm.dirty">Salvar</button>
     </div>
 </form>
