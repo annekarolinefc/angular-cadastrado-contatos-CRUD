@@ -23,7 +23,7 @@ export class ContactsService {
 
   //LISTAR O CONTATOS
   listContact(){
-    return this.http.get<Contact[]>(`${urlBase}/contacts`); //retorna um array de objetos
+    return this.http.get<Contact[]>(`${urlBase}/contacts?_sort=name`); //retorna um array de objetos ordenado por nome
     }
 
   //OBTER UM UNICO CONTATO específico
