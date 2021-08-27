@@ -6,6 +6,8 @@
   4- Importação do módulo de 
   5- Criação de 3 telas: Contatos, Edição e Adição
   6- Definindo as rotas
+  7- Desenvolvendo o Layout
+  8- Criando um serviço
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.

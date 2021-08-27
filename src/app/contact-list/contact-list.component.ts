@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 //IMPORTAR SERVIÇO
 import { Contact, ContactsService } from '../contacts.service';
@@ -21,4 +22,11 @@ export class ContactListComponent implements OnInit {
       }); //observer + callback
   }
 
+  deleteContact(contact: Contact){
+    this.contactsService.deleteContact(contact.id).subscribe(()=>{
+      const index = this.contacts.indexOf(contact); //PROCURAR O INDEX DELE
+      this.contacts.splice(index,1);//apagar o indice da lista
+    })
+
+  }
 }
