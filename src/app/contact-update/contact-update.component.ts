@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ContactsService } from '../contacts.service';
 
 @Component({
@@ -11,27 +11,26 @@ import { ContactsService } from '../contacts.service';
 export class ContactUpdateComponent implements OnInit {
 
   contactForm = new FormGroup({
-    name: new FormControl('', Validators.required),//inicializa com o campo vazio e é obrigatorio
+    name: new FormControl('', Validators.required),
     phone: new FormControl('', Validators.required)
-  })
-
+  });
   id: number;
 
   constructor(private contactsService: ContactsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    //recebendo o contato - visualização - para editar
-    this.route.paramMap.subscribe(paramMap =>{
+    this.route.paramMap.subscribe(paramMap => {
       this.id = parseInt(paramMap.get('id'));
-
-      this.contactsService.retrieveContact(this.id).subscribe(contact =>{
-       this.contactForm.reset(contact);})
+      this.contactsService.retrieveContact(this.id).subscribe(contact => {
+        this.contactForm.reset(contact);
+      });
     })
   }
 
-  updateContact(){
-    this.contactsService.updateContact({id: this.id, ...this.contactForm.value}).subscribe(contact =>{
-      this.contactForm.reset(contact);
-    })
+  updateContact() {
+    this.contactsService.updateContact({ id: this.id, ...this.contactForm.value })
+      .subscribe(contact => {
+        this.contactForm.reset(contact);
+      });
   }
 }
