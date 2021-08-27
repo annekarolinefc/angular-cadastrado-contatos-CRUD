@@ -1,0 +1,11 @@
+mat-form-field {
+    width: 100%;
+}
+
+.actions>button {
+    margin-left: 16px
+}
+
+.form {
+    padding: 8px 16px;
+}
